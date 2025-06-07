@@ -62,11 +62,11 @@ crtMntDf <- function(df,strvn,endvn,bgnDate){
   l <- lapply(lst,crtLst,bgnDate=bgnDate)
   return(l)
 }
-source("/home/haixi/Documents/projects/monitor_recessions/monitor_recessions/src/BSPT.R")
+source("/home/ethorondor/Documents/monitor_recessions/src/BSPT.R")
 #############################################################################################
 ################## prepare data #############################################################
 #############################################################################################
-dt <- read.csv("/home/haixi/Documents/projects/monitor_recessions/monitor_recessions/data/cfnai-realtime-2012-2020-03.csv", header = TRUE)
+dt <- read.csv("/media/ethorondor/File/data/cfnai-realtime-2012-2020-03.csv", header = TRUE)
 dt.ma3 <- dt[,seq(1,ncol(dt),by=2)]
 dt.ma3[,1]<-as.Date(dt.ma3[,1],format="%m/%d/%Y")
 cfnai.lst <- crtDfLst(dt.ma3) 
